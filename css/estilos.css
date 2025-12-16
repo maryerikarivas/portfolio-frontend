@@ -1,0 +1,790 @@
+/* ============================
+   PAGINA COMPLETA
+   ============================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   VARIABLES DE COLORES ESTABLECIDOS PARA MI PORFOLIO
+   ======================================================*/
+
+:root {
+  /* Backgrounds */
+  --color-bg-primary: #F6EFE9;     /* Crema suave */
+  --color-bg-secondary: #EAD6D1;   /* Beige rosado */
+  --color-bg-alt: #FBF8F6;         /* Blanco roto */
+
+  /* Brand / Accent */
+  --color-accent-light: #D8A6A0;   /* Rosa empolvado */
+  --color-accent-medium: #C78C8B;  /* Rosa viejo */
+  --color-accent-strong: #B35A5F;  /* Rosa floral intenso */
+
+  /* Primary Actions */
+  --color-primary: #7A3A3A;        /* Borgoña / vino */
+  --color-primary-hover: #B35A5F;  /* Hover botones */
+
+  /* Text */
+  --color-text-primary: #3A2A28;   /* Texto principal */
+  --color-text-secondary: #8C7B76; /* Texto secundario */
+  --color-text-inverse: #FFFFFF;   /* Texto sobre fondos oscuros */
+
+  /* Borders & UI */
+  --color-border-soft: #E2C9C3;
+  --color-shadow-soft: rgba(58, 42, 40, 0.12);
+}
+
+
+
+/* =============
+   HEADER
+   ============= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #FBF8F6;
+  box-shadow: 0 2px 10px #E2C9C3;;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+    max-height: 100px;
+    width: auto; /
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  color: #3A2A28;
+}
+
+.nav-links a:hover {
+  color: #7A3A3A;
+}
+
+/* ==================================
+   MENÚ HAMBURGUESA (PARA MOBILES)
+   ================================== */  
+
+.menu-toggle-checkbox,
+.menu-toggle-label {
+  display: none;
+}
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+  
+  /* Mostrar el botón de hamburguesa en móviles */
+  .menu-toggle-label {
+    display: block; 
+    cursor: pointer;
+    font-size: 28px;
+    z-index: 1001;
+  }
+
+  /* Posicionar el menú fuera de la pantalla en móviles por defecto */
+  .nav-links {
+    position: fixed;
+    right: 0;
+    top: 80px; 
+    background-color: #FBF8F6; 
+    width: 250px;
+    height: calc(100vh - 80px);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links li {
+    margin-bottom: 20px; /* Espaciado vertical para la lista móvil */
+  }
+
+  .menu-toggle-checkbox:checked ~ .nav-links {
+    transform: translateX(0); /* Muestra el menú */
+  }
+}
+
+/* ============================
+   HERO SECTION
+   ============================ */
+
+.hero {
+  min-height: 100vh;
+  /* Background Styling */
+  background-color: #F6EFE9;
+  background-image: url("../img/background-hero.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  /* Centrado Flexbox */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  margin-top: 80px; 
+}
+
+.hero-text {
+  max-width: 520px;
+  margin-right: auto; 
+}
+
+/* --- Tipografía y Estilos del Texto --- */
+.hero-text h1 {
+  font-family: 'Suez One', serif;
+  font-size: 52px;
+  line-height: 1.2;
+  color: #3A2A28; /* Color de texto principal */
+} 
+
+.hero-text h1 span {
+  color: #7A3A3A; /* Color principal (para el nombre resaltado) */
+}
+
+.hero-subtitle {
+  margin-top: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #8C7B76; /* Color de texto secundario */
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 20px;
+}
+
+/* ============================
+   BUTTONS (General Styles)
+   ============================ */
+
+a.btn {
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease; 
+  border: 2px solid transparent; 
+}
+
+a.btn-primary {
+  background-color: #7A3A3A; /* Color principal */
+  color:  #ffffff; /* Color de texto blanco/inverso */
+  box-shadow: 0 8px 20px rgba(58, 42, 40, 0.12); /* Sombra suave */
+}
+
+a.btn-primary:hover {
+  background-color: #B35A5F; /* Color hover principal */
+}
+
+a.btn-outline {
+  border-color: #7A3A3A; /* Color principal para el borde */
+  color: #7A3A3A; /* Color principal para el texto */
+  background-color: transparent;
+}
+
+a.btn-outline:hover {
+  background-color: #7A3A3A;
+  color: #ffffff;
+}
+
+
+/* --- Media Query para Móviles --- */
+
+@media (max-width: 1024px) {
+  .hero {
+    background-position: center top;
+  }
+
+  .hero-container {
+    justify-content: center;
+    text-align: center;
+    padding: 0 30px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* ============================
+   SOBRE MÍ
+   ============================ */
+
+.about-section {
+    background: #D8A6A0; 
+    padding: 120px 30px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.about-img img {
+    width: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 5px 25px #3A2A28;
+}
+
+.about-text {
+    flex: 1; 
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-family: 'Suez One', serif;
+    font-size: 40px;
+    color: #F6EFE9; 
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #3A2A28;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    max-width: 600px;
+}
+
+/* --- Media Query para Móviles --- */
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .about-img {
+        margin-bottom: 40px; 
+    }
+
+    .about-img img {
+        width: 260px;
+    }
+
+    .about-text h2 {
+        font-size: 34px;
+    }
+    
+}
+
+
+/* ============================
+   MIS CONOCIMIENTOS - Layout 3x3 Centrado
+   ============================ */
+
+.skills-section {
+    background-color: #F6EFE9; /* Crema suave */
+    font-family: 'Montserrat', sans-serif;
+    color: #3A2A28; /* Texto principal */
+    padding: 80px 20px; 
+}
+.skills-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    font-family: 'Suez One', serif;
+    font-size: 40px;
+    color: #7A3A3A; 
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.skills-description {
+  max-width: 600px; 
+  color: #8C7B76; 
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 auto 40px auto; 
+  text-align: center; 
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  /* Eliminamos justify-content: center; aquí, 
+     el centrado global se logra con el margen auto en el .skill */
+  max-width: 900px; /* Limita el ancho máximo del grid para que no se estire demasiado en monitores grandes */
+  margin: 0 auto; /* [AJUSTE CLAVE] Centra el contenedor completo del grid */
+}
+
+.skill {
+  color: #3A2A28; 
+  background-color: #FFFFFF; 
+  border: 1px solid #E2C9C3; 
+  border-radius: 8px;
+  /* [AJUSTE CLAVE 3x3] Calcula el ancho para que quepan 3 con márgenes de 10px a cada lado (total 20px) */
+  width: calc(33.333% - 20px); 
+  margin: 10px; /* Margen de 10px alrededor de cada tarjeta */
+  padding: 30px;
+  transition: transform 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(58, 42, 40, 0.05);
+}
+
+.skill:hover {
+  border-color: #B35A5F; 
+  color: #7A3A3A; 
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(58, 42, 40, 0.1);
+}
+
+.skill-icon {
+  font-size: 4em; /* Tamaño ajustado para un diseño 3x3 más compacto */
+  margin-bottom: 15px;
+  display: block;
+  width: 100%;
+  transition: color 0.3s;
+}
+
+.skill:hover .skill-icon {
+  color: #B35A5F; 
+}
+
+.skill-title {
+  font-size: 1.1em; /* Título ligeramente más pequeño */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.skill .skill-description {
+    font-size: 0.85em; /* Descripción más pequeña */
+    color: #8C7B76;
+    line-height: 1.4;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.skills-title {
+    font-family: 'Suez One', serif;
+    font-size: 40px;
+    color: #7A3A3A; /* Color principal */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skills-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 600px; 
+    color: #8C7B76; /* Texto secundario */
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+/* ============================
+   Media Queries Ajustados (Responsividad)
+   ============================ */
+
+/* En tablets/móviles grandes (>= 580px), mostramos 2 columnas */
+@media (max-width: 768px) {
+  .skill {
+    /* 2 columnas */
+    width: calc(50% - 20px); 
+    padding: 20px 15px;
+  }
+  .skill-icon {
+    font-size: 3.5em;
+  }
+}
+
+/* En móviles pequeños (< 450px), mostramos 1 columna */
+@media (max-width: 450px) {
+  .skill {
+    /* 1 columna */
+    width: calc(100% - 20px);
+    max-width: 300px; /* Limita el ancho si la pantalla es muy ancha */
+    margin: 10px auto; /* Centra la única columna */
+  }
+  .skill-icon {
+    font-size: 3em;
+  }
+  .skills-description, .section-title {
+      text-align: center;
+  }
+}
+
+
+/* ============================
+   Media Queries Ajustados
+   ============================ */
+
+@media (max-width: 580px) {
+  .skill-title {
+    font-size: 1.1em;
+  }
+  .skill {
+    width: calc(50% - 20px); /* Dos columnas con margen */
+    padding: 20px 10px;
+    margin: 0.5em;
+  }
+  .skill-icon {
+    font-size: 3em; /* Tamaño de ícono mejorado para móviles */
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .skill {
+    width: calc(100% - 10px); /* Una sola columna en pantallas muy pequeñas */
+    max-width: 250px;
+    margin: 0.5em auto; /* Centra la tarjeta */
+    padding: 15px;
+  }
+  .skill-icon {
+    font-size: 3em;
+  }
+  .skills-description {
+      text-align: center; /* Centra la descripción en vista móvil */
+  }
+  .section-title {
+      text-align: center; /* Centra el título en vista móvil */
+  }
+}
+
+
+/* ============================
+   SECCIÓN DE CITA/MENSAJE (Simplificado)
+   ============================ */
+
+.quote-section {
+    background-color: #D8A6A0;
+    padding: 80px 30px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.icon-quoter {
+    margin-bottom: 20px;
+}
+
+.icon-quoter i {
+    color: #7A3A3A;
+    font-size: 48px;
+    opacity: 0.5; 
+}
+
+/* Estilo para la frase principal (usando Suez One) */
+.message-phrase {
+    font-family: 'Suez One', serif; /* Aplicación directa */
+    font-size: 48px;
+    line-height: 1.4;
+    color: #3A2A28; 
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* Estilos para el resto del texto (usando Montserrat) */
+.message-phrase strong {
+    color: #7A3A3A;
+}
+
+.message-phrase,
+.message-footer {
+    font-size: 24px;
+    color: #8C7B76;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.message-footer strong {
+    font-weight: 700;
+    color: #7A3A3A;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .message-phrase {
+        font-size: 24px;
+    }
+    .icon-quoter i {
+        font-size: 36px;
+    }
+}
+
+
+/* ============================
+   CONTACTO
+   ============================ */
+
+.contact-section {
+    /* Usando color de fondo alternativo */
+    background: var(--color-bg-alt);
+    padding: 100px 30px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Lado Izquierdo */
+.contact-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-text h2 {
+    font-family: 'Suez One', serif; /* Añadida 'serif' para fallback */
+    font-size: 42px;
+    /* Usando color principal */
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.contact-text p {
+    font-family: 'Montserrat', sans-serif; /* Añadida 'sans-serif' para fallback */
+    font-size: 18px;
+    /* Usando color de texto principal */
+    color: var(--color-text-primary);
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    /* Usando color principal */
+    background: var(--color-primary);
+    border-radius: 50%;
+    /* Usando color inverso (blanco) */
+    color: var(--color-text-inverse);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.contact-icon:hover {
+    /* Usando color hover principal */
+    background: var(--color-primary-hover);
+}
+
+/* FORMULARIO */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    /* Usando color de fondo alternativo (blanco) */
+    background: var(--color-bg-alt);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Sombra suave */
+}
+
+.contact-form h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    /* Usando color principal */
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    /* Usando color de texto principal */
+    color: var(--color-text-primary);
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Color de borde neutro */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--color-text-primary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    /* Usando color principal para el foco */
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-icons {
+        justify-content: center;
+        margin: auto; /* Centra los iconos en móvil */
+    }
+    
+    .contact-form {
+        margin-top: 40px; /* Añade espacio entre el texto y el formulario en móvil */
+    }
+
+    .contact-text h2 {
+        font-size: 34px;
+    }
+}
+
+
+
+/* ============================
+   FOOTER
+   ============================ */
+
+.footer {
+    /* Usamos el color principal para un fondo oscuro consistente */
+    background: var(--color-primary);
+    padding: 40px 20px;
+    /* El color del texto principal del footer será el inverso (blanco) */
+    color: var(--color-text-inverse); 
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    margin: 0 12px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    /* Usamos el color inverso, pero con una ligera transparencia o un color claro */
+    color: rgba(255, 255, 255, 0.8); 
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    /* Usamos el color hover principal para el efecto */
+    color: var(--color-primary-hover);
+}
+
+.footer-socials {
+    margin-bottom: 15px;
+}
+
+.footer-socials a {
+    margin: 0 10px;
+    font-size: 22px;
+    /* Usamos el color inverso (blanco) por defecto */
+    color: var(--color-text-inverse);
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    /* Usamos el color hover principal para el efecto */
+    color: var(--color-primary-hover);
+}
+
+.footer-copy {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    /* Usamos un color ligeramente más suave para el copyright */
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-copy .heart {
+  color: #F6EFE9;
+}
+
