@@ -27,26 +27,23 @@
         <div class="header-container">
 
             <div class="logo">
-            <a href="/">
-                <img src="img/logo-mr.png" alt="Mi Logo">
-            </a>
+                <a href="/">
+                    <img src="img/logo-mr.png" alt="Mi Logo">
+                </a>
             </div>
-
-            <!-- Mueve estos elementos para que sean hermanos directos del UL -->
             <input type="checkbox" id="menu-toggle-checkbox" class="menu-toggle-checkbox">
             <label for="menu-toggle-checkbox" class="menu-toggle-label">
             ☰
             </label>
 
-            <!-- ELIMINA LA ETIQUETA <nav> TEMPORALMENTE para probar -->
             <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#conocimientos">Conocimientos</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#conocimientos">Conocimientos</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <!-- Fin UL -->
+           
 
         </div>
     </header>
@@ -63,8 +60,13 @@
                         </p>
                         <div class="hero-actions">
                             <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-                            <a href="#" class="btn btn-outline">Descargar CV</a>
+                            <a href="docs/CV-Maryerika-Rivas.pdf" class="btn btn-outline" download>Descargar CV</a>
+
                         </div>
+                    </div>  
+
+                    <div class="hero-img">
+                        <img src="img/mi-hero.png" alt="Imagen Principal">
                     </div>
             <!-- Aquí podrías añadir una imagen de perfil si quisieras, junto al texto -->
             </div>
@@ -76,7 +78,7 @@
         <section id="sobre-mi" class="about-section">
             <div class="about-container">
 
-                <!-- Imagen ficticia -->
+                <!-- Imagen Sobre mi (Diseñada en Canva) -->
                 <div class="about-img">
                     <img src="img/sobre-mi.png" alt="Imagen sobre mí">
                 </div>
@@ -111,7 +113,7 @@
        <!-- MIS CONOCIMIENTOS-->
         <section id="conocimientos" class="section skills-section">
             <div class="column content">
-                <!-- ... títulos y descripciones ... -->
+                <!-- Títulos y descripciones -->
                 <h2 class="skills-title">Mis Conocimientos</h2>
                 <p class="skills-subtitle">
                 Estas son algunas de las herramientas y competencias que utilizo en mis proyectos 
@@ -119,39 +121,39 @@
                 </p>
                 <div class="grid skills-grid">
                     <div class="skill">
-                    <i class="fab fa-html5 skill-icon"></i> <!-- CORRECTO -->
-                    <h3 class="skill-title">HTML 5</h3>
-                    <p class="skill-description">Estructura semántica</p>
+                        <i class="fab fa-html5 skill-icon"></i> 
+                        <h3 class="skill-title">HTML 5</h3>
+                        <p class="skill-description">Estructura semántica</p>
                     </div>
 
                     <div class="skill">
-                    <i class="fab fa-css3-alt skill-icon"></i> <!-- CORRECTO -->
-                    <h3 class="skill-title">CSS 3</h3>
-                    <p class="skill-description">Estilos y responsive</p>
+                        <i class="fab fa-css3-alt skill-icon"></i>
+                        <h3 class="skill-title">CSS 3</h3>
+                        <p class="skill-description">Estilos y responsive</p>
                     </div>
 
                     <div class="skill">
-                    <i class="fab fa-js skill-icon"></i> <!-- CORRECTO -->
-                    <h3 class="skill-title">JavaScript</h3>
-                    <p class="skill-description">Interactividad</p>
+                        <i class="fab fa-js skill-icon"></i>
+                        <h3 class="skill-title">JavaScript</h3>
+                        <p class="skill-description">Interactividad</p>
                     </div>
 
                     <div class="skill">
-                    <i class="fab fa-react skill-icon"></i> 
-                    <h3 class="skill-title">React</h3>
-                    <p class="skill-description">Biblioteca de JavaScript</p>
+                        <i class="fab fa-react skill-icon"></i> 
+                        <h3 class="skill-title">React</h3>
+                        <p class="skill-description">Biblioteca de JavaScript</p>
                     </div>
 
                     <div class="skill">
-                    <i class="fab fa-git-alt skill-icon"></i> 
-                    <h3 class="skill-title">GIT</h3>
-                    <p class="skill-description">Control de versines</p>
+                        <i class="fab fa-git-alt skill-icon"></i> 
+                        <h3 class="skill-title">GIT</h3>
+                        <p class="skill-description">Control de versiones</p>
                     </div>
 
                     <div class="skill">
-                    <i class="fab fa-sass skill-icon"></i>
-                    <h3 class="skill-title">Sass</h3>
-                    <p class="skill-description">Procesador de CSS</p>
+                        <i class="fab fa-sass skill-icon"></i>
+                        <h3 class="skill-title">Sass</h3>
+                        <p class="skill-description">Procesador de CSS</p>
                     </div>
                 </div>
             </div>
@@ -181,6 +183,45 @@
             </div>
         </section>
 
+        <!-- PROYECTOS -->
+         <section id="proyectos" class="projects-section">   
+            <div class="projects-container">
+                <h2 class="projects-title">Mis Proyectos</h2>
+		        <p class="projects-subtitle">Proyectos seleccionados que reflejan mi enfoque en UX, producto digital y mejora continua.</p>
+                <div class="projects-grid">
+                    <div class="projects-card">
+                        <img src="img/generador-memes.png" alt="Generador de memes">
+                        <h3>Generador de memes</h3>
+                    </div>
+
+                    <div class="projects-card">
+                        <img src="img/Match3.png" alt="Match 3">
+                        <h3>Match 3</h3>
+                    </div>
+
+		            <div class="projects-card">
+                        <img src="img/controlador-gastos.png" alt="Controlador de gastos">
+                        <h3>Controlador de gastos</h3>
+                    </div>
+
+                    <div class="projects-card">
+                        <img src="img/admin-reuniones.png" alt="Administrador de reuniones">
+                        <h3>Administrador de reuniones</h3>
+                    </div>
+
+		            <div class="projects-card">
+                        <img src="img/todo-app.png" alt="Todo App">
+                        <h3>Todo App</h3>
+                    </div>
+
+                    <div class="projects-card">
+                        <img src="img/buscador-peli.png" alt=“Buscador de películas”>
+                        <h3>Buscador de películas</h3>
+                    </div>
+  		        </div>
+            </div>
+        </section>  
+
         <!-- CONTACTO: Formulario -->
         <section id="contacto" class="contact-section">
             <!-- Este es el contenedor principal que usa flexbox -->
@@ -196,10 +237,10 @@
                         </p>
                     </div>
                     <div class="contact-icons">
-                        <a href="#" class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="mailto:tucorreo@gmail.com" class="contact-icon"><i class="fa-regular fa-envelope"></i></a>
-                        <a href="#" class="contact-icon"><i class="fa-brands fa-discord"></i></a>
-                        <a href="#" class="contact-icon"><i class="fa-brands fa-behance"></i></a>
+                        <a href="https://www.linkedin.com/in/maryerikarivas-it/" target="_blank" class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:maryerika.rivasgonza@gmail.com" class="contact-icon"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="#" title="Discord: marye_rivas" class="contact-icon"><i class="fa-brands fa-discord"></i></a>
+                        <a href="https://github.com/maryerikarivas" target="_blank" class="contact-icon"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
@@ -207,7 +248,7 @@
                 <div class="contact-form">
                     <h3>Escríbeme</h3>
                     <form>
-                        <!-- ... tus form-groups ... -->
+                        
                         <div class="form-group">
                             <label>Nombre</label>
                             <input type="text" placeholder="Ingresa tu nombre">
@@ -240,7 +281,7 @@
             <div class="footer-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#sobre-mi">Sobre mí</a>
-                <a href=“#conocimientos>Conocimientos</a>
+                <a href="#conocimientos">Conocimientos</a>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#contacto">Contacto</a>
             </div>

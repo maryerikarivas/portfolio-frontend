@@ -8,34 +8,6 @@
   box-sizing: border-box;
 }
 
-/* ======================================================
-   VARIABLES DE COLORES ESTABLECIDOS PARA MI PORFOLIO
-   ======================================================*/
-
-:root {
-  /* Backgrounds */
-  --color-bg-primary: #F6EFE9;     /* Crema suave */
-  --color-bg-secondary: #EAD6D1;   /* Beige rosado */
-  --color-bg-alt: #FBF8F6;         /* Blanco roto */
-
-  /* Brand / Accent */
-  --color-accent-light: #D8A6A0;   /* Rosa empolvado */
-  --color-accent-medium: #C78C8B;  /* Rosa viejo */
-  --color-accent-strong: #B35A5F;  /* Rosa floral intenso */
-
-  /* Primary Actions */
-  --color-primary: #7A3A3A;        /* Borgoña / vino */
-  --color-primary-hover: #B35A5F;  /* Hover botones */
-
-  /* Text */
-  --color-text-primary: #3A2A28;   /* Texto principal */
-  --color-text-secondary: #8C7B76; /* Texto secundario */
-  --color-text-inverse: #FFFFFF;   /* Texto sobre fondos oscuros */
-
-  /* Borders & UI */
-  --color-border-soft: #E2C9C3;
-  --color-shadow-soft: rgba(58, 42, 40, 0.12);
-}
 
 
 
@@ -98,7 +70,7 @@
 /* --- Media Query para Móviles --- */
 @media (max-width: 768px) {
   
-  /* Mostrar el botón de hamburguesa en móviles */
+  
   .menu-toggle-label {
     display: block; 
     cursor: pointer;
@@ -106,7 +78,7 @@
     z-index: 1001;
   }
 
-  /* Posicionar el menú fuera de la pantalla en móviles por defecto */
+
   .nav-links {
     position: fixed;
     right: 0;
@@ -136,42 +108,41 @@
 
 .hero {
   min-height: 100vh;
-  /* Background Styling */
   background-color: #F6EFE9;
-  background-image: url("../img/background-hero.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  /* Centrado Flexbox */
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }
 
+/* CONTENEDOR PRINCIPAL */
 .hero-container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 50px;
-  margin-top: 80px; 
+  margin-top: 80px;
+
+  display: flex;                
+  flex-direction: row;          
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
 }
 
+/* TEXTO */
 .hero-text {
   max-width: 520px;
-  margin-right: auto; 
 }
 
-/* --- Tipografía y Estilos del Texto --- */
 .hero-text h1 {
   font-family: 'Suez One', serif;
   font-size: 52px;
   line-height: 1.2;
-  color: #3A2A28; /* Color de texto principal */
-} 
+  color: #3A2A28;
+}
 
 .hero-text h1 span {
-  color: #7A3A3A; /* Color principal (para el nombre resaltado) */
+  color: #7A3A3A;
 }
 
 .hero-subtitle {
@@ -179,17 +150,32 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   line-height: 1.6;
-  color: #8C7B76; /* Color de texto secundario */
+  color: #8C7B76;
 }
 
+/* BOTONES */
 .hero-actions {
   margin-top: 36px;
   display: flex;
   gap: 20px;
 }
 
+/* IMAGEN */
+.hero-img {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-img img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 /* ============================
-   BUTTONS (General Styles)
+   BUTTONS
    ============================ */
 
 a.btn {
@@ -199,23 +185,23 @@ a.btn {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease; 
-  border: 2px solid transparent; 
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 a.btn-primary {
-  background-color: #7A3A3A; /* Color principal */
-  color:  #ffffff; /* Color de texto blanco/inverso */
-  box-shadow: 0 8px 20px rgba(58, 42, 40, 0.12); /* Sombra suave */
+  background-color: #7A3A3A;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(58, 42, 40, 0.12);
 }
 
 a.btn-primary:hover {
-  background-color: #B35A5F; /* Color hover principal */
+  background-color: #B35A5F;
 }
 
 a.btn-outline {
-  border-color: #7A3A3A; /* Color principal para el borde */
-  color: #7A3A3A; /* Color principal para el texto */
+  border-color: #7A3A3A;
+  color: #7A3A3A;
   background-color: transparent;
 }
 
@@ -224,49 +210,55 @@ a.btn-outline:hover {
   color: #ffffff;
 }
 
-
 /* --- Media Query para Móviles --- */
 
+/* Tablet y Móvil */
 @media (max-width: 1024px) {
-  .hero {
-    background-position: center top;
-  }
-
-  .hero-container {
-    justify-content: center;
+   .hero-container {
+    flex-direction: column-reverse;
     text-align: center;
-    padding: 0 30px;
+    gap: 40px;
+    padding: 0 24px; 
   }
 
-  .hero-text {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
+  
   .hero-actions {
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column; 
+    gap: 14px;
+  }
+
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-img img {
+      width: 100%; 
+      max-width: 400px; 
+      margin: 0 auto; 
+  }
+
+
+  .hero-text h1 {
+    font-size: 42px;
   }
 }
 
+
 @media (max-width: 480px) {
   .hero-text h1 {
-    font-size: 36px;
+    font-size: 36px; 
   }
 
   .hero-subtitle {
     font-size: 16px;
   }
   
-  .hero-actions {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
 }
+
+
 
 
 /* ============================
@@ -340,13 +332,13 @@ a.btn-outline:hover {
 
 
 /* ============================
-   MIS CONOCIMIENTOS - Layout 3x3 Centrado
+   MIS CONOCIMIENTOS
    ============================ */
 
 .skills-section {
-    background-color: #F6EFE9; /* Crema suave */
+    background-color: #F6EFE9;
     font-family: 'Montserrat', sans-serif;
-    color: #3A2A28; /* Texto principal */
+    color: #3A2A28;
     padding: 80px 20px; 
 }
 .skills-container {
@@ -374,10 +366,8 @@ a.btn-outline:hover {
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  /* Eliminamos justify-content: center; aquí, 
-     el centrado global se logra con el margen auto en el .skill */
-  max-width: 900px; /* Limita el ancho máximo del grid para que no se estire demasiado en monitores grandes */
-  margin: 0 auto; /* [AJUSTE CLAVE] Centra el contenedor completo del grid */
+  max-width: 900px; 
+  margin: 0 auto; 
 }
 
 .skill {
@@ -385,9 +375,8 @@ a.btn-outline:hover {
   background-color: #FFFFFF; 
   border: 1px solid #E2C9C3; 
   border-radius: 8px;
-  /* [AJUSTE CLAVE 3x3] Calcula el ancho para que quepan 3 con márgenes de 10px a cada lado (total 20px) */
   width: calc(33.333% - 20px); 
-  margin: 10px; /* Margen de 10px alrededor de cada tarjeta */
+  margin: 10px; 
   padding: 30px;
   transition: transform 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
   text-align: center;
@@ -402,7 +391,7 @@ a.btn-outline:hover {
 }
 
 .skill-icon {
-  font-size: 4em; /* Tamaño ajustado para un diseño 3x3 más compacto */
+  font-size: 4em; 
   margin-bottom: 15px;
   display: block;
   width: 100%;
@@ -414,13 +403,13 @@ a.btn-outline:hover {
 }
 
 .skill-title {
-  font-size: 1.1em; /* Título ligeramente más pequeño */
+  font-size: 1.1em; 
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .skill .skill-description {
-    font-size: 0.85em; /* Descripción más pequeña */
+    font-size: 0.85em; 
     color: #8C7B76;
     line-height: 1.4;
     margin-bottom: 0;
@@ -430,7 +419,7 @@ a.btn-outline:hover {
 .skills-title {
     font-family: 'Suez One', serif;
     font-size: 40px;
-    color: #7A3A3A; /* Color principal */
+    color: #7A3A3A;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -438,16 +427,14 @@ a.btn-outline:hover {
 .skills-subtitle {
     font-family: 'Montserrat', sans-serif;
     max-width: 600px; 
-    color: #8C7B76; /* Texto secundario */
+    color: #8C7B76;
     font-size: 18px;
     line-height: 1.6;
     margin: 0 auto 40px auto;
     text-align: center;
 }
 
-/* ============================
-   Media Queries Ajustados (Responsividad)
-   ============================ */
+/* --- Media Query para Móviles --- */
 
 /* En tablets/móviles grandes (>= 580px), mostramos 2 columnas */
 @media (max-width: 768px) {
@@ -464,60 +451,60 @@ a.btn-outline:hover {
 /* En móviles pequeños (< 450px), mostramos 1 columna */
 @media (max-width: 450px) {
   .skill {
-    /* 1 columna */
     width: calc(100% - 20px);
-    max-width: 300px; /* Limita el ancho si la pantalla es muy ancha */
-    margin: 10px auto; /* Centra la única columna */
+    max-width: 300px; 
+    margin: 10px auto; 
   }
+
   .skill-icon {
     font-size: 3em;
   }
+
   .skills-description, .section-title {
       text-align: center;
   }
 }
 
 
-/* ============================
-   Media Queries Ajustados
-   ============================ */
+/* --- Media Query para Móviles --- */
 
 @media (max-width: 580px) {
   .skill-title {
     font-size: 1.1em;
   }
   .skill {
-    width: calc(50% - 20px); /* Dos columnas con margen */
+    width: calc(50% - 20px); 
     padding: 20px 10px;
     margin: 0.5em;
   }
   .skill-icon {
-    font-size: 3em; /* Tamaño de ícono mejorado para móviles */
+    font-size: 3em; 
     margin-bottom: 10px;
   }
 }
 
+/* --- Media Query para Móviles --- */
 @media (max-width: 450px) {
   .skill {
-    width: calc(100% - 10px); /* Una sola columna en pantallas muy pequeñas */
+    width: calc(100% - 10px); 
     max-width: 250px;
-    margin: 0.5em auto; /* Centra la tarjeta */
+    margin: 0.5em auto; 
     padding: 15px;
   }
   .skill-icon {
     font-size: 3em;
   }
   .skills-description {
-      text-align: center; /* Centra la descripción en vista móvil */
+      text-align: center; 
   }
   .section-title {
-      text-align: center; /* Centra el título en vista móvil */
+      text-align: center; 
   }
 }
 
 
 /* ============================
-   SECCIÓN DE CITA/MENSAJE (Simplificado)
+   SECCIÓN DE CITA/MENSAJE 
    ============================ */
 
 .quote-section {
@@ -542,9 +529,9 @@ a.btn-outline:hover {
     opacity: 0.5; 
 }
 
-/* Estilo para la frase principal (usando Suez One) */
+
 .message-phrase {
-    font-family: 'Suez One', serif; /* Aplicación directa */
+    font-family: 'Suez One', serif; 
     font-size: 48px;
     line-height: 1.4;
     color: #3A2A28; 
@@ -552,7 +539,7 @@ a.btn-outline:hover {
     font-family: 'Montserrat', sans-serif; 
 }
 
-/* Estilos para el resto del texto (usando Montserrat) */
+
 .message-phrase strong {
     color: #7A3A3A;
 }
@@ -570,7 +557,7 @@ a.btn-outline:hover {
     color: #7A3A3A;
 }
 
-/* --- Responsive --- */
+/* --- Media Query para Móviles --- */
 @media (max-width: 600px) {
     .message-phrase {
         font-size: 24px;
@@ -582,12 +569,118 @@ a.btn-outline:hover {
 
 
 /* ============================
+   PROYECTOS
+   ============================ */
+
+.projects-section {
+    background: #F6EFE9;
+    padding: 100px 30px;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Título y subtítulo */
+.projects-title {
+    font-family: 'Suez One', serif;
+    font-size: 42px;
+    color: #7A3A3A;
+    margin-bottom: 12px;
+}
+
+.projects-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #8C7B76;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+/* Grid de proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Card */
+.projects-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px var(--color-shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #E2C9C3;
+    display: flex;               
+    flex-direction: column;      
+    align-items: center;        
+}
+
+.projects-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(58, 42, 40, 0.18);
+}
+
+/* Imagen */
+.projects-card img {
+    width: 70%;
+    max-width: 220px;
+    height: 200px;
+    object-fit: contain; 
+    margin-top: 30px;
+}
+
+/* Título del proyecto */
+.projects-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3A2A28;
+    padding: 20px 16px 28px;
+    text-align: center;
+}
+
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+    .projects-title {
+        font-size: 34px;
+    }
+
+    .projects-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .projects-card img {
+        height: 160px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ============================
    CONTACTO
    ============================ */
 
 .contact-section {
-    /* Usando color de fondo alternativo */
-    background: var(--color-bg-alt);
+    background: #FBF8F6;
     padding: 100px 30px;
 }
 
@@ -601,25 +694,23 @@ a.btn-outline:hover {
     flex-wrap: wrap;
 }
 
-/* Lado Izquierdo */
+
 .contact-text {
     flex: 1;
     min-width: 280px;
 }
 
 .contact-text h2 {
-    font-family: 'Suez One', serif; /* Añadida 'serif' para fallback */
+    font-family: 'Suez One', serif; 
     font-size: 42px;
-    /* Usando color principal */
-    color: var(--color-primary);
+    color: #7A3A3A;
     margin-bottom: 20px;
 }
 
 .contact-text p {
-    font-family: 'Montserrat', sans-serif; /* Añadida 'sans-serif' para fallback */
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    /* Usando color de texto principal */
-    color: var(--color-text-primary);
+    color: #3A2A28;
     margin-bottom: 25px;
     max-width: 500px;
 }
@@ -632,11 +723,9 @@ a.btn-outline:hover {
 .contact-icon {
     width: 45px;
     height: 45px;
-    /* Usando color principal */
-    background: var(--color-primary);
+    background: #7A3A3A;
     border-radius: 50%;
-    /* Usando color inverso (blanco) */
-    color: var(--color-text-inverse);
+    color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -645,26 +734,23 @@ a.btn-outline:hover {
 }
 
 .contact-icon:hover {
-    /* Usando color hover principal */
-    background: var(--color-primary-hover);
+    background: #B35A5F;
 }
 
 /* FORMULARIO */
 .contact-form {
     flex: 1;
     min-width: 300px;
-    /* Usando color de fondo alternativo (blanco) */
-    background: var(--color-bg-alt);
+    background: #FBF8F6;
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Sombra suave */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 .contact-form h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
-    /* Usando color principal */
-    color: var(--color-primary);
+    color: #7A3A3A;
     margin-bottom: 20px;
 }
 
@@ -677,8 +763,7 @@ a.btn-outline:hover {
 .form-group label {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    /* Usando color de texto principal */
-    color: var(--color-text-primary);
+    color: #3A2A28;
     margin-bottom: 6px;
 }
 
@@ -686,18 +771,49 @@ a.btn-outline:hover {
 .form-group textarea {
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ddd; /* Color de borde neutro */
+    border: 1px solid #dddddd;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    color: var(--color-text-primary);
+    color: #3A2A28;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    /* Usando color principal para el foco */
-    border-color: var(--color-primary);
+    border-color: #7A3A3A;
     outline: none;
 }
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botón primario */
+.btn-primary {
+    background-color: #7A3A3A;
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(58, 42, 40, 0.12);
+}
+
+.btn-primary:hover {
+    background-color: #B35A5F;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(58, 42, 40, 0.12);
+}
+
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -708,11 +824,11 @@ a.btn-outline:hover {
 
     .contact-icons {
         justify-content: center;
-        margin: auto; /* Centra los iconos en móvil */
+        margin: auto;
     }
     
     .contact-form {
-        margin-top: 40px; /* Añade espacio entre el texto y el formulario en móvil */
+        margin-top: 40px;
     }
 
     .contact-text h2 {
@@ -727,11 +843,9 @@ a.btn-outline:hover {
    ============================ */
 
 .footer {
-    /* Usamos el color principal para un fondo oscuro consistente */
-    background: var(--color-primary);
+    background: #7A3A3A;
     padding: 40px 20px;
-    /* El color del texto principal del footer será el inverso (blanco) */
-    color: var(--color-text-inverse); 
+    color: #FFFFFF; 
 }
 
 .footer-container {
@@ -749,14 +863,12 @@ a.btn-outline:hover {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-    /* Usamos el color inverso, pero con una ligera transparencia o un color claro */
     color: rgba(255, 255, 255, 0.8); 
     transition: 0.3s;
 }
 
 .footer-links a:hover {
-    /* Usamos el color hover principal para el efecto */
-    color: var(--color-primary-hover);
+    color: #B35A5F;
 }
 
 .footer-socials {
@@ -766,21 +878,17 @@ a.btn-outline:hover {
 .footer-socials a {
     margin: 0 10px;
     font-size: 22px;
-    /* Usamos el color inverso (blanco) por defecto */
-    color: var(--color-text-inverse);
+    color: #FFFFFF;
     transition: 0.3s;
 }
 
 .footer-socials a:hover {
-    /* Usamos el color hover principal para el efecto */
-    color: var(--color-primary-hover);
-}
+    color: #B35A5F}
 
 .footer-copy {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     margin-top: 10px;
-    /* Usamos un color ligeramente más suave para el copyright */
     color: rgba(255, 255, 255, 0.6);
 }
 
